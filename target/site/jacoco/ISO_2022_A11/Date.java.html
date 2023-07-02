@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Date.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">P1</a> &gt; <a href="index.source.html" class="el_package">ISO_2022_A11</a> &gt; <span class="el_source">Date.java</span></div><h1>Date.java</h1><pre class="source lang-java linenums">package ISO_2022_A11;
+
+public class Date {
+    private int month;
+    private int day;
+    private int year;
+
+    public boolean isLeap() {
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        if (this.year % 400 == 0) {</span>
+<span class="fc" id="L10">            return true;</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        } else if (this.year % 100 == 0) {</span>
+<span class="fc" id="L12">            return false;</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        } else if (this.year % 4 == 0) {</span>
+<span class="fc" id="L14">            return true;</span>
+        } else {
+<span class="fc" id="L16">            return false;</span>
+        }
+    }
+
+<span class="fc" id="L20">    public Date(int month, int day, int year) throws IllegalArgumentException {</span>
+<span class="fc" id="L21">        setMonth(month);</span>
+<span class="fc" id="L22">        setDay(day);</span>
+<span class="fc" id="L23">        setYear(year);</span>
+
+<span class="fc bfc" id="L25" title="All 6 branches covered.">        if (day &lt; 0 || month &lt; 0 || year &lt; 0) {</span>
+<span class="fc" id="L26">            throw new IllegalArgumentException(&quot;Data parameters has to be bigger than 0&quot;);</span>
+        }
+<span class="fc" id="L28">    }</span>
+
+    public int getMonth() {
+<span class="nc" id="L31">        return month;</span>
+    }
+
+    public void setMonth(int month) {
+<span class="fc" id="L35">        this.month = month;</span>
+<span class="fc" id="L36">    }</span>
+    
+    public int getDay() {
+<span class="nc" id="L39">        return day;</span>
+    }
+
+    public void setDay(int day) {
+<span class="fc" id="L43">        this.day = day;</span>
+<span class="fc" id="L44">    }</span>
+    
+    public int getYear() {
+<span class="nc" id="L47">        return year;</span>
+    }
+
+    public void setYear(int year) {
+<span class="fc" id="L51">        this.year = year;</span>
+<span class="fc" id="L52">    }</span>
+
+   
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
